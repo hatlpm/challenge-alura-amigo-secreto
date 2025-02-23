@@ -23,7 +23,6 @@
 
 Aquí tienes una captura de pantalla de la aplicación:
 
-![Vista previa de la aplicación](https://via.placeholder.com/800x400?text=Captura+de+pantalla+de+la+aplicación)
 
 ---
 
@@ -40,99 +39,19 @@ Aquí tienes una captura de pantalla de la aplicación:
 El proyecto consta de los siguientes archivos principales:
 
 1. **`index.html`**: Archivo principal que contiene la estructura de la página.
-2. **`script.js`**: Archivo JavaScript que implementa la lógica de la aplicación.
+2. **`app.js`**: Archivo JavaScript que implementa la lógica de la aplicación.
+3. **`style.css`**: Archivo CSS que implementa la estetica de la aplicación.
 
-### Código de ejemplo
-
-#### HTML (`index.html`)
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Amigos</title>
-</head>
-<body>
-    <h1>Lista de Amigos</h1>
-    <input type="text" id="amigo" placeholder="Ingresa un nombre">
-    <button onclick="agregarAmigo()">Agregar</button>
-    <ul id="listaAmigos"></ul>
-    <button onclick="sortearAmigo()">Sortear</button>
-    <div id="resultado"></div>
-    <script src="script.js"></script>
-</body>
-</html>
-```
-
-#### JavaScript (`script.js`)
-
-```javascript
-let listaAmigos = [];
-const numeroMaxAmigos = 4;
-
-function agregarAmigo() {
-    const input = document.getElementById("amigo");
-    const nombre = input.value.trim();
-
-    if (!/^[a-zA-Z\s]+$/.test(nombre)) {
-        alert("Por favor, ingresa un nombre válido (solo letras y espacios).");
-        return;
-    }
-
-    if (listaAmigos.includes(nombre)) {
-        alert("Este nombre ya está en la lista.");
-        return;
-    }
-
-    if (listaAmigos.length >= numeroMaxAmigos) {
-        alert("Has alcanzado el límite máximo de amigos.");
-        return;
-    }
-
-    listaAmigos.push(nombre);
-    actualizarListaAmigos();
-    limpiarCaja();
-}
-
-function actualizarListaAmigos() {
-    const listaHTML = document.getElementById("listaAmigos");
-    listaHTML.innerHTML = "";
-    listaAmigos.forEach((amigo) => {
-        const li = document.createElement("li");
-        li.textContent = amigo;
-        listaHTML.appendChild(li);
-    });
-}
-
-function limpiarCaja() {
-    document.getElementById("amigo").value = "";
-}
-
-function sortearAmigo() {
-    if (listaAmigos.length === 0) {
-        alert("La lista está vacía. Agrega amigos antes de sortear.");
-        return;
-    }
-
-    const indiceAleatorio = Math.floor(Math.random() * listaAmigos.length);
-    const amigoSorteado = listaAmigos[indiceAleatorio];
-    document.getElementById("resultado").textContent = `🎉 Amigo sorteado: ${amigoSorteado}`;
-}
-```
-
----
 
 ## 📖 Cómo usar la aplicación
 
 1. **Abre el archivo `index.html` en tu navegador.**
 2. **Agrega amigos**:
    - Escribe un nombre en el campo de entrada.
-   - Haz clic en el botón "Agregar".
+   - Haz clic en el botón "añadir".
    - Si el nombre es válido, se agregará a la lista.
 3. **Sortear un amigo**:
-   - Haz clic en el botón "Sortear".
+   - Haz clic en el botón "Sortear amigo".
    - El nombre de un amigo seleccionado al azar aparecerá en la sección de resultados.
 4. **Mensajes de validación**:
    - Si intentas agregar un nombre inválido, duplicado o si la lista está vacía, recibirás un mensaje de alerta.
@@ -153,14 +72,14 @@ Luego, abre el archivo `index.html` en tu navegador.
 
 ## 👩‍💻 Autor
 
-| [<img src="https://via.placeholder.com/100" width=115><br><sub>Tu Nombre</sub>](https://github.com/tu-usuario) |
+| HARRISON |
 | :---: |
 
 ---
 
 ## 📝 Licencia
 
-Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+Este proyecto fue desarrollado junto `ALURA LATAM` y `ORACLE`.
 
 ---
 
@@ -178,7 +97,7 @@ Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para má
 
 ## 🎯 Estado del proyecto
 
-🚧 Proyecto en desarrollo 🚧
+Proyecto en Finalizado 
 
 ---
 
